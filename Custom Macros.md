@@ -10,16 +10,16 @@ Repeatedly apply a fillet with radius 12 to selected 2D polylines without re‑e
 
 ### Macro String
 ```
-*^C^C._FILLET _R 12 _P 
+*^C^C._FILLET;_R;12;_P;\
 ```
 
 ### Breakdown
 - `*` Repeat the entire macro until you press Esc (keeps invoking FILLET).
 - `^C^C` Cancel any active command(s) to start clean.
-- `._FILLET` Call the standard (.) global (_) FILLET command.
-- `_R 12` Set the fillet Radius option to 12 (ensures consistent radius every cycle).
-- `_P` Invoke the Polyline option so the next selection applies fillets to all corners of one 2D polyline.
-- `\` Pause for user input (select the polyline). After completion the command ends and the leading `*` restarts it.
+- `._FILLET;` Call the standard (.) global (_) FILLET command, then `;` = Enter.
+- `_R;12;` Choose Radius option, input value 12, then Enter to set it.
+- `_P;` Choose the Polyline option and press Enter so AutoCAD prompts for a polyline.
+- `\` Pause for polyline selection. After completion the command ends and the leading `*` restarts it.
 
 ### Usage
 1. Run the macro (assign it to a custom button / CUI element / ribbon).  
